@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-const MainItems = () => {
+const Items = () => {
   const [products, setProducts] = useState([]);
   const response = async () => {
     try {
@@ -57,4 +57,4 @@ const MainItems = () => {
   );
 };
 
-export default MainItems;
+export default Items;

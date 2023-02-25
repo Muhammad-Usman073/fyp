@@ -1,17 +1,17 @@
-import { React} from "react";
+import { React } from "react";
 
 import { Link } from "react-router-dom";
 const Navigation = () => {
-
-
   return (
     // Navigation Container
     <div className="flex justify-center py-2 items-center ">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuqSUWGefeLef35q2txrO4W5gaQgjIrJoVvw&usqp=CAU"
-        alt="logo"
-        className="h-[4rem] w-[4rem] rounded-3xl "
-      />
+      <Link to='/' >
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuqSUWGefeLef35q2txrO4W5gaQgjIrJoVvw&usqp=CAU"
+          alt="logo"
+          className="h-[4rem] w-[4rem] rounded-3xl "
+        />
+      </Link>
       <nav className="ml-[4rem] mr-[4rem]">
         <ul className="flex">
           <Link
@@ -37,14 +37,18 @@ const Navigation = () => {
       </span>
       <div className="flex justify-between ml-[4rem]">
         <div className="ml-[3rem]">
-          <span className="material-symbols-outlined cursor-pointer  text-[2.5rem]">
-            person
-          </span>
+          <Link to="authuser">
+            <span className="material-symbols-outlined cursor-pointer  text-[2.5rem]">
+              person
+            </span>
+          </Link>
         </div>
         <div className="ml-[2rem]">
-          <span className="material-symbols-outlined cursor-pointer text-[2.5rem] ">
-            shopping_basket
-          </span>
+          <Link to="cart">
+            <span className="material-symbols-outlined cursor-pointer text-[2.5rem] ">
+              shopping_basket
+            </span>
+          </Link>
         </div>
       </div>
     </div>
