@@ -1,16 +1,19 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const SignInForm = () => {
   return (
-    <div className=" relative w-[100vw] h-[100vh] ">
-    <form action="">
-        <div className="absolute right-[35vw] bottom-[35vh] flex flex-col gap-[1rem] ">
+    <div>
+      <form action="">
+        <div className="bg-slate-200 pb-[3rem] px-[2rem] pt-[2rem] rounded-xl inline-flex ml-[35%] mt-[3%] flex-col gap-[2rem] ">
+          <div className="m-auto text-3xl font-bold font-ubuntu text-blue-700 ">
+            Login Form
+          </div>
           <div className=" flex flex-col">
             <label className="font-ubuntu text-xl " htmlFor="">
               Enter your email
             </label>
             <input
-              className="outline-none border-b-2 bg-red-100 border-black h-[3rem] w-[30vw] "
+              className="outline-none text-lg rounded-t border-b-2 bg-red-100 border-y-gray-600 h-[3rem] w-[30vw] "
               type="email"
               name=""
               id=""
@@ -21,7 +24,7 @@ const SignInForm = () => {
               Enter your password
             </label>
             <input
-              className="outline-none border-b-2 bg-red-100 border-black h-[3rem] w-[30vw] "
+              className="outline-none rounded-t text-xl border-b-2 bg-red-100 border-y-gray-600 h-[3rem] w-[30vw] "
               type="password"
               name=""
               id=""
@@ -29,12 +32,20 @@ const SignInForm = () => {
           </div>
 
           <div>
-            {" "}
             <input
-              className=" text-xl font-ubuntu px-[3rem] py-2 rounded-3xl bg-yellow-300"
+              className="cursor-pointer text-xl font-ubuntu px-[3rem] py-2 rounded-3xl bg-yellow-300"
               type="submit"
               value="logIn"
             />
+          </div>
+          <div>
+            <div></div>
+            <div className="ml-[8.5rem]">
+              if you don't have,{" "}
+              <Link className="cursor-pointer font-bold text-blue-800 ">
+                create an acount.
+              </Link>
+            </div>
           </div>
         </div>
       </form>

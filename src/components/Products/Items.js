@@ -1,11 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { AppContext } from "../../State";
 import axios from "axios";
 const Items = () => {
+  const { dispatch } = useContext(AppContext);
+
   const [products, setProducts] = useState([]);
+
+  const onAddCartHandler = (product) => {
+    console.log("selexted products", product);
+    dispatch({
+      type: "UPDATE_CART",
+      payload: {
+        item: product,
+      },
+    });
+  };
+
   const response = async () => {
     try {
       const apiData = await axios.get("https://fakestoreapi.com/products");
-      console.log(apiData.data, "api data");
       setProducts(apiData.data);
     } catch (error) {
       console.error(error);
@@ -21,7 +34,6 @@ const Items = () => {
       </div>
       <div className="inline-flex flex-wrap gap-[4rem]  ">
         {products.map((items) => {
-          console.log(items, "items");
           return (
             <div
               key={items.id}
@@ -38,12 +50,11 @@ const Items = () => {
                     ${items.price}{" "}
                   </div>
                   <div className="w-[fit-content] font-ubuntu ">
-                    {" "}
-                    {items.title}{" "}
+                    {items.title}
                   </div>
                 </section>
                 <button
-                  onClick={(e) => console.log(e.target.value)}
+                  onClick={() => onAddCartHandler(items)}
                   className="p-2 w-[100%] rounded font-bold text-yellow-50 bg-orange-400"
                 >
                   Add to Cart

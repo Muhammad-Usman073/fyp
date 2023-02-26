@@ -1,11 +1,13 @@
-import { React } from "react";
-
+import { React, useContext } from "react";
 import { Link } from "react-router-dom";
+import CartContext from "../../../Store/Context";
+import { AppContext } from "../../../State";
 const Navigation = () => {
+  const { state } = useContext(AppContext);
   return (
     // Navigation Container
     <div className="flex justify-center py-2 items-center ">
-      <Link to='/' >
+      <Link to="/">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuqSUWGefeLef35q2txrO4W5gaQgjIrJoVvw&usqp=CAU"
           alt="logo"
@@ -16,13 +18,13 @@ const Navigation = () => {
         <ul className="flex">
           <Link
             to="/men"
-            className="mr-[2rem] font-bold font-ubuntu hover:cursor-pointer "
+            className="mr-[2rem] hover:bg-black hover:text-white hover:px-[2rem] hover:py-2 hover:rounded-3xl font-bold font-ubuntu hover:cursor-pointer "
           >
             Men
           </Link>
           <Link
             to="/women"
-            className="mr-[2rem] font-bold font-ubuntu hover:cursor-pointer "
+            className="mr-[2rem]  hover:bg-black hover:text-white hover:px-[2rem] hover:py-2 hover:rounded-3xl font-bold font-ubuntu hover:cursor-pointer "
           >
             Women
           </Link>
@@ -32,7 +34,7 @@ const Navigation = () => {
         className="outline-none bg-gray-100 border-[1px] w-[35%] font-bold h-[3rem]"
         type="search"
       />
-      <span className="material-symbols-outlined bg-yellow-500 p-[0.25rem] text-[2.5rem] cursor-pointer ">
+      <span className="material-symbols-outlined bg-yellow-300 p-[0.25rem] text-[2.5rem] cursor-pointer ">
         search
       </span>
       <div className="flex justify-between ml-[4rem]">
@@ -44,15 +46,15 @@ const Navigation = () => {
           </Link>
         </div>
         <div className="ml-[2rem]">
-          <Link to="cart">
-            <span className="material-symbols-outlined cursor-pointer text-[2.5rem] ">
-              shopping_basket
+          <Link className="relative" to="cart">
+            <span className="material-symbols-outlined  cursor-pointer text-[2.5rem] ">
+              shopping_cart
             </span>
+            <span className="font-bold absolute "> {state.cart.length} </span>
           </Link>
         </div>
       </div>
     </div>
   );
 };
-
 export default Navigation;

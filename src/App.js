@@ -9,14 +9,14 @@ import { Routes, Route } from "react-router-dom";
 const App = () => {
   return (
     <Fragment>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="men" element={<Men />} />
-        <Route path="women" element={<Women />} />
-        <Route path="cart" element={<Cart />} />
-        <Route path="authuser" element={<AuthUser />} />
-      </Routes>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="men" element={<Men />} />
+          <Route path="women" element={<Women />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="authuser" element={<AuthUser />} />
+        </Routes>
     </Fragment>
   );
 };
