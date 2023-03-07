@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       fontFamily: {
         ubuntu: ["Ubuntu", "sans-serif"],
+        Sans: ["Open Sans", "sans-serif"],
+        Barlow: ["Barlow Semi Condensed", "sans-serif"],
       },
     },
   },

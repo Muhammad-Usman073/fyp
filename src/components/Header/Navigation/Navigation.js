@@ -1,60 +1,91 @@
-import { React, useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import CartContext from "../../../Store/Context";
-import { AppContext } from "../../../State";
+import BackgroundImage from "../backgroundPic/backgroundImage";
+import Logo from "../../../assets/Logo.jpg";
 const Navigation = () => {
-  const { state } = useContext(AppContext);
   return (
-    // Navigation Container
-    <div className="flex justify-center py-2 items-center ">
-      <Link to="/">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuqSUWGefeLef35q2txrO4W5gaQgjIrJoVvw&usqp=CAU"
-          alt="logo"
-          className="h-[4rem] w-[4rem] rounded-3xl "
-        />
-      </Link>
-      <nav className="ml-[4rem] mr-[4rem]">
-        <ul className="flex">
-          <Link
-            to="/men"
-            className="mr-[2rem] hover:bg-black hover:text-white hover:px-[2rem] hover:py-2 hover:rounded-3xl font-bold font-ubuntu hover:cursor-pointer "
-          >
-            Men
-          </Link>
-          <Link
-            to="/women"
-            className="mr-[2rem]  hover:bg-black hover:text-white hover:px-[2rem] hover:py-2 hover:rounded-3xl font-bold font-ubuntu hover:cursor-pointer "
-          >
-            Women
-          </Link>
-        </ul>
-      </nav>
-      <input
-        className="outline-none bg-gray-100 border-[1px] w-[35%] font-bold h-[3rem]"
-        type="search"
-      />
-      <span className="material-symbols-outlined bg-yellow-300 p-[0.25rem] text-[2.5rem] cursor-pointer ">
-        search
-      </span>
-      <div className="flex justify-between ml-[4rem]">
-        <div className="ml-[3rem]">
-          <Link to="authuser">
-            <span className="material-symbols-outlined cursor-pointer  text-[2.5rem]">
-              person
-            </span>
-          </Link>
+    <div >
+      {
+        // Navigation
+      }
+      <div >
+        {
+          //Backdrop
+        }
+        <div className="bg-[#161616] top-0 absolute h-[143.5%] w-[100%] bg-opacity-[0.70]">
+          <div className="gap-[4rem] flex justify-between items-center mt-4  ">
+            {
+              // complete navigation
+            }
+            <div>
+              {
+                //Logo Image
+              }
+              <img
+                className="w-[5rem] ml-4 rounded-full h-[5rem]"
+                src={Logo}
+                alt="Logo"
+              />
+            </div>
+            <div className="flex items-center gap-[2rem] mr-4 ">
+              {
+                //Nav Links
+              }
+              <Link className="text-white font-font-extralight font-Sans text-opacity-[1] ">
+                HOME
+              </Link>
+              <Link className="text-white font-font-extralight font-Sans text-opacity-[1]">
+                SHOP
+              </Link>
+              <Link className="text-white font-font-extralight font-Sans text-opacity-[1]">
+                LOOKBOOK
+              </Link>
+              <Link className="text-white font-font-extralight font-Sans text-opacity-[1]">
+                ABOUT US
+              </Link>
+              <Link className="text-white font-font-extralight font-Sans text-opacity-[1]">
+                CONTACT US
+              </Link>
+              <Link>
+                <span className="material-symbols-outlined text-white text-opacity-[1] text-[2.3rem] ">
+                  local_mall
+                </span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-[10rem] ml-[10rem] ">
+            {
+              //Navvigation Text
+            }
+            <p className="text-white trackfont-extralighttight font-Barlow text-opacity-[1] text-[20px] ">
+              Summer Collection
+            </p>
+            <div className="mt-[1.5rem] leading-[5.5rem] ">
+              <p className="text-white trackfont-extralightwide text-[5rem] text-opacity-[1] font-extralight font-Barlow ">
+                INTRODUCING
+              </p>
+              <p className="text-white trackfont-extralightwide text-[5rem] text-opacity-[1] font-extralight font-Barlow ">
+                NEW ARRIVAL
+              </p>
+            </div>
+            <p className="text-white text-font-extralightrem] text-opacity-[1] mt-[3rem] w-[50%] ">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse amet
+              tenetur est eveniet! Aliquid provident quam et rerum culpa
+              recusandae distinctio, quaerat natus nisi.
+            </p>
+            <button className="bg-white rounded-md mt-[3rem] tracking-widest text-black font-bold font-Sans px-[2.2rem] py-[1rem] ">
+              VIEW COLLECTION
+            </button>
+          </div>
         </div>
-        <div className="ml-[2rem]">
-          <Link className="relative" to="cart">
-            <span className="material-symbols-outlined  cursor-pointer text-[2.5rem] ">
-              shopping_cart
-            </span>
-            <span className="font-bold absolute "> {state.cart.length} </span>
-          </Link>
-        </div>
+        {
+          //Background Hero Image
+        }
+        <BackgroundImage />
       </div>
     </div>
   );
 };
+
 export default Navigation;

@@ -3,10 +3,18 @@ import React, { createContext, useReducer } from "react";
 let AppContext = createContext("");
 
 const initialState = {
+  modalVisible: true,
   cart: [],
 };
 let reducer = (state, action) => {
   switch (action.type) {
+    case "MODAL_VISIBLE": {
+      console.log("Called Visible Modal");
+      return {
+        ...state,
+        modalVisible: false,
+      }
+    };
     case "UPDATE_CART": {
       console.log("recieved products", action.payload.item);
       return {
