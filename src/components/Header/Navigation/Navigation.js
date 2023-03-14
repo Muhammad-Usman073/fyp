@@ -1,57 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import BackgroundImage from "../backgroundPic/backgroundImage";
-import Logo from "../../../assets/Logo.jpg";
+import NavBar from "../../NavBar/NavBar";
 const Navigation = () => {
   return (
-    <div >
+    <div>
       {
         // Navigation
       }
-      <div >
+      <div>
         {
           //Backdrop
         }
         <div className="bg-[#161616] top-0 absolute h-[143.5%] w-[100%] bg-opacity-[0.70]">
-          <div className="gap-[4rem] flex justify-between items-center mt-4  ">
-            {
-              // complete navigation
-            }
-            <div>
-              {
-                //Logo Image
-              }
-              <img
-                className="w-[5rem] ml-4 rounded-full h-[5rem]"
-                src={Logo}
-                alt="Logo"
-              />
-            </div>
-            <div className="flex items-center gap-[2rem] mr-4 ">
-              {
-                //Nav Links
-              }
-              <Link className="text-white font-font-extralight font-Sans text-opacity-[1] ">
-                HOME
-              </Link>
-              <Link className="text-white font-font-extralight font-Sans text-opacity-[1]">
-                SHOP
-              </Link>
-              <Link className="text-white font-font-extralight font-Sans text-opacity-[1]">
-                LOOKBOOK
-              </Link>
-              <Link className="text-white font-font-extralight font-Sans text-opacity-[1]">
-                ABOUT US
-              </Link>
-              <Link className="text-white font-font-extralight font-Sans text-opacity-[1]">
-                CONTACT US
-              </Link>
-              <Link>
-                <span className="material-symbols-outlined text-white text-opacity-[1] text-[2.3rem] ">
-                  local_mall
-                </span>
-              </Link>
-            </div>
+          {
+            //nav bar
+          }
+          <div className="mt-4">
+            <NavBar textColor={"white"} cartIconColor={"white"} />
           </div>
 
           <div className="mt-[10rem] ml-[10rem] ">
