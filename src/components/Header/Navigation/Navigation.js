@@ -2,8 +2,12 @@ import React from "react";
 import BackgroundImage from "../backgroundPic/backgroundImage";
 import NavBar from "../../NavBar/NavBar";
 const Navigation = () => {
+
+
   return (
     <div>
+
+
       {
         // Navigation
       }

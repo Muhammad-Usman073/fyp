@@ -1,26 +1,25 @@
-import React, { Fragment } from "react";
-import { createPortal } from "react-dom";
-const Backdrop = (props) => {
-  return (
-    <div>
-      <div
-        onClick={props.onClick}
-        className=" bg-black min-h-screen absolute z-[1] top-0 "
-      />
-    </div>
-  );
-};
+import React from "react";
+
 const CartModal = () => {
-  const clickhandler = () => {
-    console.log("got it with backdrop");
-  };
   return (
-    <Fragment>
-      {createPortal(
-        <Backdrop onClick={clickhandler} />,
-        document.getElementById("overLays")
-      )}
-    </Fragment>
+    <div className="bg-black min-h-screen w-full flex ">
+      {
+        //backdrop
+      }
+      <div>
+        {
+          //cart inside backdrop
+        }
+        <div>
+          <p>Shopping cart</p>
+          <span>x</span>
+          <div>Body</div>
+          <div>
+            <button>CONTINUE SHOPPING</button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

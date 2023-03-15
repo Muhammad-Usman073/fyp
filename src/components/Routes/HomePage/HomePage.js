@@ -17,7 +17,7 @@ const HomePage = () => {
       <ProductCards />
       <Tags />
       <Footer />
-      <Rights/>
+      <Rights />
     </div>
   );
 };
