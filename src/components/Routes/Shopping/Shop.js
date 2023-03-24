@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import NavBar from "../../../components/NavBar/NavBar";
 import ProductCards from "../../productCards/ProductCards";
 import Footer from "../../Footer/Footer";
@@ -17,7 +17,7 @@ const Shop = () => {
           <div className="font-Barlow pb-[2rem] text-[#54595f] pt-[2rem] text-[80px] ">
             SHOP
           </div>
-          <div className="  ">
+          <div>
             <ProductCards />
           </div>
         </div>

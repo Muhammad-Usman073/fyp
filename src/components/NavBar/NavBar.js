@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import Logo from "../../assets/Logo.jpg";
 import { Link } from "react-router-dom";
-import Cart from "../Routes/cart/Cart";
+import Cart from "../Routes/cart/CartModal";
+
 const NavBar = ({ textColor, cartIconColor }) => {
-  const [shown, setShown] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+
+  const toggleCart = () => {
+    setShowCart(!showCart);
+    document.body.classList.add("overflow-hidden");
+  };
+
   const navIcons = `text-${textColor} font-font-extralight font-Sans text-opacity-[1]`;
   const cart = ` cursor-pointer material-symbols-outlined text-${cartIconColor} text-opacity-[1] text-[2.3rem]`;
-
-  const CartHandler = () => {
-    document.body.classList.remove("overflow-hidden");
-    return setShown(true);
-  };
 
   return (
     <div>
@@ -47,15 +49,13 @@ const NavBar = ({ textColor, cartIconColor }) => {
           <Link to="/ContactUs" className={navIcons}>
             CONTACT US
           </Link>
-          <span onClick={CartHandler} className={cart}>
+          <span onClick={toggleCart} className={cart}>
             local_mall
           </span>
         </div>
       </div>
-      <div className="overflow-y-hidden absolute top-0 ">
-        {
-          shown && <Cart shown={shown} setShown={setShown} />
-        }
+      <div>
+        {showCart && <Cart showCart={showCart} setShowCart={setShowCart} />}
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ const Navigation = () => {
 
 
   return (
-    <div>
+    <div className="relative" >
 
 
       {
@@ -15,7 +15,7 @@ const Navigation = () => {
         {
           //Backdrop
         }
-        <div className="bg-[#161616] top-0 absolute h-[143.5%] w-[100%] bg-opacity-[0.70]">
+        <div className="bg-[#161616] top-0 absolute h-[100%] w-[100%] bg-opacity-[0.70]">
           {
             //nav bar
           }
@@ -51,7 +51,9 @@ const Navigation = () => {
         {
           //Background Hero Image
         }
+        <div>
         <BackgroundImage />
+        </div>
       </div>
     </div>
   );

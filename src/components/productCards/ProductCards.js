@@ -8,7 +8,6 @@ const ProductCards = (props) => {
   const response = async () => {
     try {
       const apiData = await axios.get("https://fakestoreapi.com/products");
-      console.log(apiData.data);
       setProducts(apiData.data);
     } catch (error) {
       console.error(error);
