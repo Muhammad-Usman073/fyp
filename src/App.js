@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import AboutUs from "./components/Routes/AboutUs/AboutUs";
 import ContactUs from "./components/Routes/ContactUs/ContactUs";
 import Shop from "./components/Routes/Shopping/Shop";
-
+import AddToCartHandler from "./components/Routes/cart/AddToCartHandler";
 const App = () => {
   return (
     <Fragment>
@@ -13,6 +13,7 @@ const App = () => {
         <Route path="AboutUs" element={<AboutUs />} />
         <Route path="ContactUs" element={<ContactUs />} />
         <Route path="Shop" element={<Shop />} />
+        <Route path="cartHandler" element={<AddToCartHandler />} />
       </Routes>
     </Fragment>
   );

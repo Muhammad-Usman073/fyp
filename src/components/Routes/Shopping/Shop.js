@@ -7,7 +7,7 @@ const Shop = () => {
   return (
     <div className="bg-gray-100 min-h-screen">
       <div>
-        <div className="bg-white items-center py-4 ">
+        <div className="bg-white py-4 ">
           <NavBar textColor={"black"} cartIconColor={"black"} />
         </div>
         {
