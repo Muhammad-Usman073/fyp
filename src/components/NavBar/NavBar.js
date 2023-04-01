@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import Logo from "../../assets/Logo.jpg";
 import { Link } from "react-router-dom";
-import Cart from "../Routes/cart/CartModal";
-
+import Cart from "../Routes/cart/Cart";
+import JoinUs from "../Routes/JoinUs/Credentials";
 const NavBar = ({ textColor, cartIconColor }) => {
   const [showCart, setShowCart] = useState(false);
-
+  const [joinUs, setJoinUs] = useState(false);
   const toggleCart = () => {
     setShowCart(!showCart);
+    document.body.classList.add("overflow-hidden");
+  };
+  const toggleJoinUs = () => {
+    console.log("join us");
+    setJoinUs(!joinUs);
     document.body.classList.add("overflow-hidden");
   };
 
@@ -49,6 +54,14 @@ const NavBar = ({ textColor, cartIconColor }) => {
           <Link to="/ContactUs" className={navIcons}>
             CONTACT US
           </Link>
+
+          <div
+            className={`text-${textColor} cursor-pointer font-font-extralight font-Sans text-opacity-[1]`}
+            onClick={toggleJoinUs}
+          >
+            JOIN US
+          </div>
+
           <span onClick={toggleCart} className={cart}>
             local_mall
           </span>
@@ -57,6 +70,8 @@ const NavBar = ({ textColor, cartIconColor }) => {
       <div>
         {showCart && <Cart showCart={showCart} setShowCart={setShowCart} />}
       </div>
+
+      {<div>{joinUs && <JoinUs />}</div>}
     </div>
   );
 };

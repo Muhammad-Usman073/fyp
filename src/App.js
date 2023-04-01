@@ -5,6 +5,7 @@ import AboutUs from "./components/Routes/AboutUs/AboutUs";
 import ContactUs from "./components/Routes/ContactUs/ContactUs";
 import Shop from "./components/Routes/Shopping/Shop";
 import AddToCartHandler from "./components/Routes/cart/AddToCartHandler";
+// import JoinUs from "./components/Routes/JoinUs/JoinUs";
 const App = () => {
   return (
     <Fragment>
@@ -14,7 +15,9 @@ const App = () => {
         <Route path="ContactUs" element={<ContactUs />} />
         <Route path="Shop" element={<Shop />} />
         <Route path="cartHandler" element={<AddToCartHandler />} />
-      </Routes>
+{      
+    // <Route path="JoinUs" element={<JoinUs />} />
+}      </Routes>
     </Fragment>
   );
 };

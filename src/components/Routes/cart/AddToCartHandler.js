@@ -3,6 +3,7 @@ import NavBar from "../../NavBar/NavBar";
 import Footer from "../../Footer/Footer";
 import Rights from "../../Footer/Rights";
 import Shirt from "../../../assets/shirt.jpg";
+import ProductCards from "../../productCards/ProductCards";
 const AddToCartHandler = () => {
   return (
     <div className=" bg-slate-100 min-h-screen  ">
@@ -10,7 +11,7 @@ const AddToCartHandler = () => {
         <div className="bg-white py-4 ">
           <NavBar textColor={"black"} cartIconColor={"black"} />
         </div>
-        <div className="bg-white py-[2rem] px-[4rem] mx-[2rem] my-[4rem] ">
+        <div className="bg-white pt-[4rem] px-[4rem] mx-[2rem] my-[4rem] ">
           <div className="flex gap-[2rem] ">
             <div className=" w-full h-full  ">
               <img className="" src={Shirt} alt="red-shirt" />
@@ -48,13 +49,24 @@ const AddToCartHandler = () => {
                     +
                   </div>
                 </div>
-                <button className=" bg-gray-500 px-[25px] tracking-[4px] py-[1px] rounded-lg hover:bg-black text-white text-[16px] font-[700] font-Sans ">
+                <button className=" bg-gray-500 px-[25px] tracking-[4px] py-[1px] rounded-md hover:bg-black text-white text-[16px] font-[700] font-Sans ">
                   ADD TO CART
                 </button>
               </div>
+              <hr className="mt-[2rem]  " />
+              <div className="mt-[1rem]">
+                <p className=" text-[16px] font-Sans text-[#4f4f4f] " >Category: Men's shirts</p>
+              </div>
             </div>
           </div>
-          <div>description</div>
+          <div className="mt-[2rem]">
+            <div className="text-[24px] font-Barlow font-[400] ">
+              RELATED PRODUCTS
+            </div>
+            <div>
+              <ProductCards />
+            </div>
+          </div>
         </div>
         <div>
           <Footer />
