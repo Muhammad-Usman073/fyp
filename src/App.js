@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import AboutUs from "./components/Routes/AboutUs/AboutUs";
 import ContactUs from "./components/Routes/ContactUs/ContactUs";
 import Shop from "./components/Routes/Shopping/Shop";
-import AddToCartHandler from "./components/Routes/cart/AddToCartHandler";
+import ProductDetailedView from "./components/Routes/cart/ProductDetailedView";
 // import JoinUs from "./components/Routes/JoinUs/JoinUs";
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         <Route path="AboutUs" element={<AboutUs />} />
         <Route path="ContactUs" element={<ContactUs />} />
         <Route path="Shop" element={<Shop />} />
-        <Route path="cartHandler" element={<AddToCartHandler />} />
+        <Route path="cartHandler" element={<ProductDetailedView />} />
 {      
     // <Route path="JoinUs" element={<JoinUs />} />
 }      </Routes>

@@ -1,30 +1,16 @@
-import { useReducer } from "react";
-import CartContext from "./Context";
-
-const initialState = {
-  totalItems: 0,
-  items: [],
-};
-const reducer = (state, action) => {
-  if (action.type === "ADD_ITEMS") {
-  }
-};
-
+import { useState } from "react";
+import CartContext from "./CartContext";
 const ContextProvider = (props) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  const addItems = (items) => {
-    dispatch({ type: "ADD_ITEMS", payload: items });
-  };
-  const removeItems = (id) => {};
-
-  const createContext = {
-    totalItems: state.totalItems,
-    addItems,
-    removeItems,
+  const [items, setItems] = useState([]);
+  const addToCart = (name, price, image) => {
+    if (items.length > 0) {
+      return items.pop();
+    } else {
+      setItems((prevState) => [...prevState, { name, price, image }]);
+    }
   };
   return (
-    <CartContext.Provider value={createContext}>
+    <CartContext.Provider value={{ items, addToCart }}>
       {props.children}
     </CartContext.Provider>
   );

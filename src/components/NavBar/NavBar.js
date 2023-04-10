@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Logo from "../../assets/Logo.jpg";
 import { Link } from "react-router-dom";
 import Cart from "../Routes/cart/Cart";
 import JoinUs from "../Routes/JoinUs/Credentials";
+import CartContext from "../../Store/CartContext";
 const NavBar = ({ textColor, cartIconColor }) => {
+  const { items } = useContext(CartContext);
+
   const [showCart, setShowCart] = useState(false);
   const [joinUs, setJoinUs] = useState(false);
   const toggleCart = () => {
@@ -11,7 +14,6 @@ const NavBar = ({ textColor, cartIconColor }) => {
     document.body.classList.add("overflow-hidden");
   };
   const toggleJoinUs = () => {
-    console.log("join us");
     setJoinUs(!joinUs);
     document.body.classList.add("overflow-hidden");
   };
@@ -61,17 +63,19 @@ const NavBar = ({ textColor, cartIconColor }) => {
           >
             JOIN US
           </div>
-
-          <span onClick={toggleCart} className={cart}>
-            local_mall
-          </span>
+          <div className="flex ">
+            <span onClick={toggleCart} className={cart}>
+              local_mall
+            </span>
+            <p> {items.length} </p>
+          </div>
         </div>
       </div>
       <div>
         {showCart && <Cart showCart={showCart} setShowCart={setShowCart} />}
       </div>
 
-      {<div>{joinUs && <JoinUs />}</div>}
+      {<div>{joinUs && <JoinUs joinUs={joinUs} setJoinUs={setJoinUs} />}</div>}
     </div>
   );
 };

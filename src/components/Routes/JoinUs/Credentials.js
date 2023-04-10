@@ -1,63 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import JoinModal from "./CredentialsModal";
+import SignInForm from "./SignInForm";
+import SignUpForm from "./SignUpForm";
 import blackMen from "../../../assets/blackMen.jpg";
-const JoinUs = ({ showCart, setShowCart }) => {
+const JoinUs = ({ joinUs, setJoinUs }) => {
+  const joinHandler = () => {
+    if (joinUs === true) {
+      setJoinUs(false);
+      if (document.body.classList.contains("overflow-hidden")) {
+        document.body.classList.remove("overflow-hidden");
+      }
+    }
+  };
 
-  // const cartHandler = () => {
-  //   if (showCart === true) {
-  //     setShowCart(false);
-  //     if (document.body.classList.contains("overflow-hidden")) {
-  //       document.body.classList.remove("overflow-hidden");
-  //     }
-  //   }
-  // };
+  const [signInActive, setSignInActive] = useState(true);
+  const [signUpActive, setSignUpActive] = useState(false);
+
+  const handleSignInLinkClick = () => {
+    setSignInActive(true);
+    setSignUpActive(false);
+  };
+
+  const handleSignUpLinkClick = () => {
+    setSignInActive(false);
+    setSignUpActive(true);
+  };
   return (
     <JoinModal>
       <div className="flex shadow-2xl ">
         <div className=" h-[90vh] w-[70vw] bg-white text-black ">
-          <form action="">
-            <div className=" flex flex-col mt-[4rem] items-center ">
-              <div className=" flex flex-col items-center gap-[1rem] ">
-                <p className=" font-[700] text-[24px] font-Sans">
-                  Welcome back, multifasahalaza.store
-                </p>
-                <p className=" text-[16px] font-[200] text-gray-400 font-Sans">
-                  welcome back! please enter your details.
-                </p>
-                <button className=" px-[3.5rem] font-[200] py-[.5rem] text-[16px] shadow-md font-Sans border-[1px] rounded ">
-                  Log in with Google
-                </button>
-
-                <p className=" font-Sans font-[500]">Or</p>
-              </div>
-
-              <div className="flex gap-[3rem] mt-[2rem] items-center flex-col">
-                <input
-                  className="border-b outline-none w-[15rem] font-[200] font-Sans"
-                  placeholder="Email"
-                  type="email"
-                />
-                <input
-                  className="border-b outline-none w-[15rem] font-[200] font-Sans"
-                  placeholder="Password"
-                  type="password"
-                />
-                <input
-                  className=" cursor-pointer px-[7rem] font-[200] py-[.6rem] text-[16px] shadow-md bg-black text-white font-Sans rounded "
-                  type="submit"
-                  value="Log in"
-                />
-              </div>
-              <div>
-                <p className=" mt-[2rem] text-[14px] font-[200] font-Sans">
-                  Dont't have an account? create account
-                </p>
-              </div>
-            </div>
-          </form>
+          {signInActive && (
+            <SignInForm
+              joinUs={joinUs}
+              setJoinUs={setJoinUs}
+              handleSignUpLinkClick={handleSignUpLinkClick}
+            />
+          )}
+          {signUpActive && (
+            <SignUpForm handleSignInLinkClick={handleSignInLinkClick} />
+          )}
         </div>
         <div className="h-[90vh] relative w-[70vw]">
-          <span className="material-symbols-outlined absolute p-[1rem] right-0 cursor-pointer text-white z-50 hover:bg-white hover:rounded-full hover:text-black text-[2rem] ">
+          <span
+            onClick={joinHandler}
+            className="material-symbols-outlined absolute p-[1rem] right-0 cursor-pointer text-white z-50 hover:bg-white hover:rounded-full hover:text-black text-[2rem] "
+          >
             close
           </span>
 

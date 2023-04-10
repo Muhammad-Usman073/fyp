@@ -2,9 +2,17 @@ import React from "react";
 import NavBar from "../../NavBar/NavBar";
 import Footer from "../../Footer/Footer";
 import Rights from "../../Footer/Rights";
-import Shirt from "../../../assets/shirt.jpg";
+// import Shirt from "../../../assets/shirt.jpg";
 import ProductCards from "../../productCards/ProductCards";
-const AddToCartHandler = () => {
+import CartContext from "../../../Store/CartContext";
+import { useContext } from "react";
+const ProductDatailedView = () => {
+  const { items } = useContext(CartContext);
+  const ProdPrice = items.map((items) => items.price);
+  const ProdName = items.map((items) => items.name);
+  const ProdImage = items.map((items) => items.image);
+  console.log(ProdImage);
+
   return (
     <div className=" bg-slate-100 min-h-screen  ">
       <div>
@@ -13,16 +21,24 @@ const AddToCartHandler = () => {
         </div>
         <div className="bg-white pt-[4rem] px-[4rem] mx-[2rem] my-[4rem] ">
           <div className="flex gap-[2rem] ">
-            <div className=" w-full h-full  ">
-              <img className="" src={Shirt} alt="red-shirt" />
+            <div
+              className="overflow-hidden "
+              style={{ width: "60vw", height: "80vh" }}
+            >
+              <img
+                className="w-[100%] h-[100%] "
+                style={{ objectFit: "contain" }}
+                src={ProdImage}
+                alt="product-pic"
+              />
             </div>
             <div className=" w-full leading-[29.7143px] ">
               <p className="font-Sans text-[#4f4f4f] text-[16px]  ">
-                Red Shirt
+                {ProdName}
               </p>
 
               <p className="font-Sans text-[#4f4f4f] mt-[2rem] text-[24px] font-[700] ">
-                $18.00
+                $ {ProdPrice}
               </p>
               <p className="text-[16px] text-[#4f4f4f] mt-[1.5rem] font-[400] w-[80%] font-Sans ">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga
@@ -55,7 +71,9 @@ const AddToCartHandler = () => {
               </div>
               <hr className="mt-[2rem]  " />
               <div className="mt-[1rem]">
-                <p className=" text-[16px] font-Sans text-[#4f4f4f] " >Category: Men's shirts</p>
+                <p className=" text-[16px] font-Sans text-[#4f4f4f] ">
+                  Category: Men's shirts
+                </p>
               </div>
             </div>
           </div>
@@ -80,4 +98,4 @@ const AddToCartHandler = () => {
   );
 };
 
-export default AddToCartHandler;
+export default ProductDatailedView;
